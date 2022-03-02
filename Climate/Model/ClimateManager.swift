@@ -7,13 +7,12 @@
 
 import Foundation
 
-struct WeatherManager {
-    
+struct ClimateManager {
     
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=511e5f562c46dbf8c9d1f7f4f971974e&units=imperial"
     
     func fetchWeather(cityName: String) {
-        let URLString = "\(weatherURL)&q=\(cityName)"
+        var URLString = "\(weatherURL)&q=\(cityName)"
     }
     
     
