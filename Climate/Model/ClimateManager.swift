@@ -14,7 +14,7 @@ struct ClimateManager {
     func fetchWeather(cityName: String) {
         let city = cityName.lowercased()
         let URLString = "\(weatherURL)&q=\(city)"
-        print(URLString)
+        performRequest(urlString: URLString)
     }
     
     func performRequest(urlString: String) {
@@ -32,10 +32,8 @@ struct ClimateManager {
                     print(error!)
                     return
                 }
-                
                 if let safeData = data {
-                    let dataString = String(data: safeData, encoding: .utf8)
-                    print(dataString)
+                    self.parseJSON(weatherData: safeData)
                 }
             }
             
@@ -43,5 +41,16 @@ struct ClimateManager {
         task.resume()
         }
     }
+    
+    func parseJSON(weatherData: Data) {
+        let decoder = JSONDecoder()
+        do {
+        let decodedData = try decoder.decode(ClimateData.self, from: weatherData)
+            print(decodedData.main.temp)
+        } catch {
+            print(error)
+        }
+    }
+    
     
     }
