@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D310606327CFF3F100001355 /* ClimateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310606227CFF3F100001355 /* ClimateManager.swift */; };
 		D320CEDF27CD7F360067DC6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320CEDE27CD7F360067DC6B /* AppDelegate.swift */; };
 		D320CEE127CD7F360067DC6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320CEE027CD7F360067DC6B /* SceneDelegate.swift */; };
 		D320CEE627CD7F360067DC6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D320CEE427CD7F360067DC6B /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D310606227CFF3F100001355 /* ClimateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateManager.swift; sourceTree = "<group>"; };
 		D320CEDB27CD7F360067DC6B /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D320CEDE27CD7F360067DC6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D320CEE027CD7F360067DC6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		D320CEF427CD7F660067DC6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D310606227CFF3F100001355 /* ClimateManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D320CEDF27CD7F360067DC6B /* AppDelegate.swift in Sources */,
+				D310606327CFF3F100001355 /* ClimateManager.swift in Sources */,
 				D320CEFD27CD83C00067DC6B /* WeatherViewController.swift in Sources */,
 				D320CEE127CD7F360067DC6B /* SceneDelegate.swift in Sources */,
 			);

@@ -32,6 +32,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        // Use the searchtextfield.text to get the weater for the city
         searchTextField.text = ""
     }
     
