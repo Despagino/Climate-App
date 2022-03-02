@@ -11,12 +11,12 @@ import UIKit
 class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var searchTextField: UITextField!
-    
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
     var climateManager = ClimateManager()
+    
     
     override func viewDidLoad() {
         searchTextField.delegate = self

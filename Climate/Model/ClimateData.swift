@@ -8,8 +8,7 @@
 import Foundation
 
 // data we get from the API
-
-struct ClimateData: Decodable {
+struct ClimateData: Codable {
     
     let name: String
     let main: Main
@@ -17,13 +16,13 @@ struct ClimateData: Decodable {
     
 }
 
-struct Main: Decodable {
+struct Main: Codable {
     
     let temp: Double
     
 }
 
-struct Weather: Decodable {
+struct Weather: Codable {
     
     let description: String
     let id: Int
