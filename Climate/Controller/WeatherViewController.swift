@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate {
-    
+class WeatherViewController: UIViewController, UITextFieldDelegate, ClimateManagerDelegate {
+
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -17,9 +17,9 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     var climateManager = ClimateManager()
     
-    
     override func viewDidLoad() {
         searchTextField.delegate = self
+        climateManager.delegate = self
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -47,5 +47,14 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
+    
+    func didUpdateWeather(_ climateManager: ClimateManager, weather: ClimateModel) {
+        print(weather)
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
     
 }

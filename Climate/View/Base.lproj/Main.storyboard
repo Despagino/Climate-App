@@ -111,7 +111,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityLabel" destination="dnX-bT-D0e" id="kX7-pI-U4R"/>
+                        <outlet property="conditionImageView" destination="9tP-R3-OdF" id="dKO-LV-Y68"/>
                         <outlet property="searchTextField" destination="v1N-B3-SAn" id="8hH-bC-0PH"/>
+                        <outlet property="temperatureLabel" destination="ViS-I9-NG9" id="Ag4-RO-QaR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
