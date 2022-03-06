@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate, ClimateManagerDelegate {
+class WeatherViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
@@ -21,6 +21,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, ClimateManag
         searchTextField.delegate = self
         climateManager.delegate = self
     }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension WeatherViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print(searchTextField.text!)
@@ -47,6 +52,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, ClimateManag
             return false
         }
     }
+}
+
+//MARK: - Protocol delegate
+
+extension WeatherViewController: ClimateManagerDelegate {
     
     func didUpdateWeather(_ climateManager: ClimateManager, weather: ClimateModel) {
         DispatchQueue.main.async {
@@ -60,6 +70,5 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, ClimateManag
     func didFailWithError(error: Error) {
         print(error)
     }
-    
     
 }
