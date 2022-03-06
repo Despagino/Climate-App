@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
 
@@ -16,10 +17,15 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     
     var climateManager = ClimateManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         searchTextField.delegate = self
         climateManager.delegate = self
+        locationManager.delegate = self
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
 }
 
@@ -70,5 +76,17 @@ extension WeatherViewController: ClimateManagerDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
+}
+
+// MARK: - Location Manager Delegate
+
+extension WeatherViewController: CLLocationManagerDelegate {
+ 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Got location data")
+    }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
